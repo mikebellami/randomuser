@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="discrption" content="parallax one page" />
+    <meta name="keyword" content="" />
+
+    <!--  Title -->
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&amp;display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">x
+    <link href="assets/css/plugins.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/display-helper.css">
+    <link rel="stylesheet" href="assets/css/helper.css">
+</head>
+
+<body>
+    <section>
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-5 ">
+                            <div class="dash-aside ">
+                                <div class="p-1">
+                                    <div class="dash-aside-header ">
+                                        <h3 class="greet-title mr-2 ls1">Hello,</h3>
+                                        <h3 class="ls2 fw600">Emerald</h3>
+                                    </div>
+                                    <div class="dash-aside-subtitle">
+                                        <p class=" fz-14">Welcome to your dashbord, kindly sort through user base</p>
+                                    </div>
+                                </div>
+
+                                <form class="mt-10">
+                                    <div class="form-group row">
+                                        <div class="col-xl-12 col-lg-12 col-sm-12  ">
+                                            <div class=" has-search">
+                                                <span> <i class="fa fa-search text-white"></i> </span>
+                                                <input type="text" class="form-control search-input-1  " placeholder="Find a user">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="row">
+                                    <div class="dash-aside-subtitle">
+                                        <p class="mt-10 fz-16 fw600" style="color: #BDBEC5;"> Show Users</p>
+                                    </div>
+
+                                    <div class="mt-10">
+                                        <input type="radio" name="gender" value="all-users" id="all-users" checked/>
+                                        <label class="text-center" for="all-users">
+                                                <i class=" all-users text-white fas fa-users fa-2x " aria-hidden="true"></i>
+                                                <p class="fz-13 mt-2" style="color:#A5A6B0; "> All Users</p>
+                                            </label>
+
+                                        <input type="radio" name="gender" value="male" id="male-users" />
+                                        <label class="text-center" for="male-users">
+                                                <i class=" male-users text-white fas fa-male fa-2x " aria-hidden="true"></i>
+                                                <p class="fz-13 mt-2" style="color:#A5A6B0; "> Male Users</p>
+                                            </label>
+
+                                        <input type="radio" name="gender" value="female" id="female-users" />
+                                        <label class="text-center" for="female-users">
+                                                <i class=" female-users text-white fas fa-female fa-2x " aria-hidden="true"></i>
+                                                <p class="fz-13 mt-2" style="color:#A5A6B0; "> Female Users</p>
+                                            </label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-7 ">
+                            <div class=" ">
+                                <div class="dash-card p-5">
+                                    <div class="dash-card-header">
+                                        <h3 class="ls2  fz-20 fw700" id="current-state"> All Users</h3>
+                                        <div class="dash-card-header-subtitle">
+                                            <p class=" fz-14">filter by</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <div class="search-icon">
+                                                            <span> <i class="fa fa-search "></i> </span>
+                                                            <input type="text" class="form-control search-input-2  " placeholder="Find a user">
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="country-icon">
+                                                        <span> <i class="fa fa-caret-down "></i> </span>
+                                                        <select class="form-control country-select text-center fz-12 fw500" id="country-select">
+                                                              <option> Country </option>
+                                                              <option>AU</option>
+                                                              <option>BR</option>
+                                                              <option>CA</option>
+                                                              <option>CH</option>
+                                                              <option>DE</option>
+                                                              <option>DK</option>
+                                                              <option>ES</option>
+                                                              <option>FI</option>
+                                                              <option>FR</option>
+                                                              <option>GB</option>
+                                                              <option>IR</option>
+                                                              <option>IE</option>
+                                                              <option>NO</option>
+                                                              <option>NL</option>
+                                                              <option>NZ</option>
+                                                              <option>TR</option>
+                                                              <option>US</option>
+                                                            </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check form-switch mt-2">
+                                                    <input class="form-check-input " type="checkbox" id="show-country">
+                                                    <label class="form-check-label switch-country  fz-12 fw600  " for="show-country"> Show Country</label>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="dash-card-body mt-1" id="result">
+                                        <!-- <div class="details-card mb-3 row">
+                                            <div class="col-lg-12">
+                                                <div class="dash-card-content ">
+                                                    <div>
+                                                        <table class="table table-borderless table-vertical-center  ">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="width: 10%;">
+                                                                        <div class="dash-profile">
+                                                                            <img src="assets/2.png" width="100" height="100" class="rounded-circle">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td style="width: ">
+                                                                        <h4 class="ls2 fw600 profile-name">Emerald <span class="fz-15 text-uppercase text-danger"> ( Nig ) </span></h4>
+                                                                        <p class="address text-muted"><i>9892 new road, baddaaa, qqq</p>
+                                                                        <span class="d-flex">    
+                                                                            <p class="fz-13  profile-text " style="color:#A5A6B0; ">  <i class=" far fa-envelope email-icon " aria-hidden="true "></i>&nbsp; Mikebeeeell@gmail.com
+                                                                            </p>
+                                                                            <p class="fz-13 text-lg-cente profile-text " style="color:#A5A6B0; "> <i class=" fas fa-phone-alt phone-icon ml-4 " aria-hidden="true "></i> &nbsp;011-111111-11</p>
+                                                                            <a href="# " class="btn profile-btn btn-lg   ">
+                                                                                <i class=" text-white fas fa-arrow-right fz-13 " aria-hidden="true "></i>
+                                                                            </a>
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="profile-info">
+                                            <div class="back">
+                                                <a href="# " class="btn back-btn ">
+                                                    <i class=" text-white fas fa-arrow-left" aria-hidden="true "></i><span class="ml-2 fz-13 bac" style="color:#8A8C9C;"> RESULTS</span>
+                                                </a>
+                                            </div>
+                                            <div class="row mt-20">
+                                                <div class="col-lg-4">
+                                                    <div class="dash-profile">
+                                                        <img src="assets/2.png" width="200" height="200" class="rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="mt-20">
+                                                        <h4 class="ls2 fw700 fz-20"> Mr ssslkjhgfghjk Emerald</h4>
+                                                        <p class="address text-muted">9892 new road, baddaaa, qqq</p>
+                                                        <span class="d-block">
+                                                            <a href="# " class="btn btn-md email-info disabled ">
+                                                                <i class=" far fa-envelope email-icon " aria-hidden="true "></i><span class="ml-2 fz-12"> Mikebeeeell@gmail.com</span>
+                                                        </a>
+                                                        <br>
+                                                        <a href="# " class="btn  btn-md join-info disabled mt-10 ">
+                                                            <span class="fz-12"> JOIN: 20-20-2020</span>
+                                                        </a>
+                                                        <p class="fz-13 mt-10 text-lg-cente profile-text " style="color:#A5A6B0; "> <i class=" fas fa-phone-alt " aria-hidden="true "></i> &nbsp;011-111111-11</p>
+                                                        <p class="fz-13 text-lg-cente profile-text " style="color:#A5A6B0; "> <i class=" fas fa-mobile-alt " aria-hidden="true "></i> &nbsp; 011-111111-11</p>
+                                                        </span>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="profile-info-footer">
+                                                <span class="lright ">
+                                                    <a href="# " class="btn  btn-md download-btn disabled  ">
+                                                        <i class=" text-white fas fa-cloud-download-alt fx2" aria-hidden="true "></i><span class="ml-2 fz-12"> Download results</span>
+                                                </a>
+                                                </span>
+                                                <span class="fright">
+                                                    <a href="# " class="btn pagination-btn-prev btn-md mr-2  disabled ">
+                                                        <i class=" text-white fas fa-angle-left fz-13 " aria-hidden="true "></i>
+                                                    </a>
+                                                    <a href="# " class="btn pagination-btn-next btn-md disabled  ">
+                                                        <i class=" text-white fas fa-angle-right fz-13 " aria-hidden="true "></i>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div> -->
+                                    </div>
+
+                                    <div class="dash-card-footer">
+                                        <span class="lright ">
+                                            <a href="# " class="btn  btn-md download-btn   ">
+                                                <i class=" text-white fas fa-cloud-download-alt fx2" aria-hidden="true "></i><span class="ml-2 fz-12"> Download results</span>
+                                        </a>
+                                        </span>
+                                        <span class="fright">
+                                            <a href="# " class="btn pagination-btn-prev btn-md mr-2  ">
+                                                <i class=" text-white fas fa-angle-left fz-13 " aria-hidden="true "></i>
+                                            </a>
+                                            <a href="# " class="btn pagination-btn-next btn-md   ">
+                                                <i class=" text-white fas fa-angle-right fz-13 " aria-hidden="true "></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script src="assets/js/jquery-3.1.1.min.js "></script>
+    <script src="assets/js/plugins.js "></script>
+    <script src="assets/js/dsn-grid.js "></script>
+    <script src="assets/js/custom.js "></script>
+    <script src="assets/js/bootstrap.js "></script>
+    <script src="https://kit.fontawesome.com/997da4a5f7.js " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous ">
+    </script>
+
+</body>
+
+</html>
