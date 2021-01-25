@@ -1,6 +1,5 @@
 $(document).ready(function () {
   var allUser = [];
-  var activeRadio = $('input[name="gender"]:checked').val();
 
   const getUserData = () => {
     $.ajax({
@@ -58,34 +57,48 @@ $(document).ready(function () {
   // radio button function
   $('input[type="radio"]').click(() => {
     var selectedRadio = $('input[name="gender"]:checked').val();
-    
-    $("#current-state").html((selectedRadio === "all-users") ? "All Users" : (selectedRadio === "male") ? "Male Users" : "Female Users");
+
+    $("#current-state").html(
+      selectedRadio === "all-users"
+        ? "All Users"
+        : selectedRadio === "male"
+        ? "Male Users"
+        : "Female Users"
+    );
 
     $("#result").empty();
-    if (selectedRadio === "all-users") {
-      renderList(allUser);
-    }
-    else {
-      var filterDisplay = allUser.filter((value) => {
-        return value.gender === selectedRadio;
-      });
-      renderList(filterDisplay);
-    }
+
+    //shorthand version of if statement
+    selectedRadio === "all-users"
+      ? renderList(allUser)
+      : (filterDisplay = allUser.filter((value) => {
+          return value.gender === selectedRadio;
+        }));
+    renderList(filterDisplay);
+
+    // if (selectedRadio === "all-users") {
+    //   renderList(allUser);
+    // }
+    // else {
+    //   var filterDisplay = allUser.filter((value) => {
+    //     return value.gender === selectedRadio;
+    //   });
+    //   renderList(filterDisplay);
+    // }
   });
 
   // select country function
-  $("#country-select").on("change", ()=>{
+  $("#country-select").on("change", () => {
     var selectedOption = $("#country-select :selected").text();
 
     $("#result").empty();
 
-    var filterOption = allUser.filter(value =>{
+    var filterOption = allUser.filter((value) => {
       return value.nat === selectedOption;
-    })
+    });
     renderList(filterOption);
-    console.log(filterOption)
-  })
-
+    console.log(filterOption);
+  });
 
   getUserData();
   //   console.log(allUser.filter((value) =>{
