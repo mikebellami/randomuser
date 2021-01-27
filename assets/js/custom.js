@@ -1,10 +1,11 @@
 $(document).ready(function () {
   var allUser = [];
+  var userList = [];
 
   const getUserData = () => {
     $.ajax({
       async: false,
-      url: "https://randomuser.me/api/?results=200&seed=02d5ae16a567c330",
+      url: "https://randomuser.me/api/?results=10",
       dataType: "json",
       success: function (data) {
         allUser = data.results;
@@ -57,7 +58,7 @@ $(document).ready(function () {
   // radio button function
   $('input[type="radio"]').click(() => {
     var selectedRadio = $('input[name="gender"]:checked').val();
-
+    activeRadio = selectedRadio;
     $("#current-state").html(
       selectedRadio === "all-users"
         ? "All Users"
@@ -74,6 +75,7 @@ $(document).ready(function () {
       : (filterDisplay = allUser.filter((value) => {
           return value.gender === selectedRadio;
         }));
+    userList = filterDisplay;
     renderList(filterDisplay);
 
     // if (selectedRadio === "all-users") {
@@ -92,12 +94,10 @@ $(document).ready(function () {
     var selectedOption = $("#country-select :selected").text();
 
     $("#result").empty();
-
-    var filterOption = allUser.filter((value) => {
+    var filterOption = userList.filter((value) => {
       return value.nat === selectedOption;
     });
     renderList(filterOption);
-    console.log(filterOption);
   });
 
   getUserData();
