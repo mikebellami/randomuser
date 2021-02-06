@@ -145,7 +145,7 @@ $(document).ready(function () {
     if (results.length != 0) {
       return renderList(results);
     } else {
-      alert("kjhgf");
+      // alert("kjhgf");
     }
   });
   const search = (value, d) => {
