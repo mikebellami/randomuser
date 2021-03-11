@@ -671,7 +671,7 @@ $(document).ready(function () {
   };
 
   // pagination
-  var total_pages, start, end;
+  var total_pages;
   var state = {
     items: allUser,
     page: 1,
@@ -682,25 +682,26 @@ $(document).ready(function () {
     var start = (page - 1) * per_page,
       end = start + per_page;
     var data = items.slice(start, end);
-
+    current = page;
     total_pages = Math.ceil(items.length / per_page);
     return {
       total_pages: total_pages,
       items: data,
       start: start,
       end: end,
-      page: page,
+      current: page,
     };
   };
 
-  const displayRender = () => {
+  const displayRender = (data = state.items, start = state.page) => {
     if ($('input[type="radio"]').prop("checked")) {
       state.items = allUser;
     } else if (selectedRadio != "") {
       state.items = userList;
     }
     console.log(paginator(state.items, state.page, state.per_page));
-    var dataItem = paginator(state.items, state.page, state.per_page);
+
+    var dataItem = paginator(data, start, state.per_page);
     renderList(dataItem.items);
   };
 
@@ -709,6 +710,7 @@ $(document).ready(function () {
       state.page--;
     }
     console.log("prev", state.page);
+
     $("#result").empty();
     displayRender();
   });
@@ -725,6 +727,7 @@ $(document).ready(function () {
   // radio button function
   $('input[type="radio"]').click(() => {
     selectedRadio = $('input[name="gender"]:checked').val();
+    state.page = 1;
     $("#current-state").html(
       selectedRadio === ""
         ? "All Users"
@@ -788,7 +791,7 @@ $(document).ready(function () {
   $(".searching").on("keyup", function () {
     var value = $(this).val().toLowerCase();
     if ($('input[type="radio"]').prop("checked")) {
-      var results = User.filter((data) => {
+      var results = allUser.filter((data) => {
         var title = data.name.title.toLowerCase();
         var first = data.name.first.toLowerCase();
         var last = data.name.last.toLowerCase();
@@ -805,7 +808,8 @@ $(document).ready(function () {
       });
     }
     $("#result").empty();
-    renderList(results);
+    displayRender(results);
+    // renderList(results);
   });
 
   // view profile
