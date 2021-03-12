@@ -574,6 +574,7 @@ $(document).ready(function () {
   var allUser = [];
   var userList = [];
   var selectedRadio;
+  var radioProp = $('input[type="radio"]').prop("checked");
   // api request
   $.ajax({
     async: false,
@@ -595,7 +596,7 @@ $(document).ready(function () {
   });
 
   // render list display
-  const renderList = (data) => {
+  const displayRender = (data) => {
     // showCountry(s);
     // console.log(showCountry(s));
 
@@ -693,35 +694,30 @@ $(document).ready(function () {
     };
   };
 
-  const displayRender = (data = state.items, start = state.page) => {
-    if ($('input[type="radio"]').prop("checked")) {
+  const renderList = (data = state.items, start = state.page) => {
+    if (radioProp) {
       state.items = allUser;
     } else if (selectedRadio != "") {
       state.items = userList;
     }
-    console.log(paginator(state.items, state.page, state.per_page));
-
     var dataItem = paginator(data, start, state.per_page);
-    renderList(dataItem.items);
+    displayRender(dataItem.items);
   };
 
   $(".pagination-btn-prev").on("click", function () {
     if (state.page > 1) {
       state.page--;
     }
-    console.log("prev", state.page);
-
     $("#result").empty();
-    displayRender();
+    renderList();
   });
 
   $(".pagination-btn-next").on("click", function () {
     if (state.page < total_pages) {
       state.page++;
     }
-    console.log("next", state.page);
     $("#result").empty();
-    displayRender();
+    renderList();
   });
 
   // radio button function
@@ -739,24 +735,14 @@ $(document).ready(function () {
     $("#result").empty();
     $(".searching").val("");
     if (selectedRadio === "") {
-      displayRender();
+      renderList(allUser);
     } else {
       filterDisplay = allUser.filter((data) => {
         return data.gender === selectedRadio;
       });
       userList = filterDisplay;
-      displayRender();
+      renderList(userList);
     }
-
-    // if (selectedRadio === "") {
-    //   renderList(User);
-    // } else {
-    //   filterDisplay = User.filter((data) => {
-    //     return data.gender === selectedRadio;
-    //   });
-    //   userList = filterDisplay;
-    //   renderList(filterDisplay);
-    // }
   });
 
   // show country
@@ -779,18 +765,23 @@ $(document).ready(function () {
   // select country function
   $("#country-select").on("change", () => {
     var selectedOption = $("#country-select :selected").text();
-
     $("#result").empty();
-    var filterOption = allUser.filter((value) => {
-      return value.nat === selectedOption;
-    });
+    if (radioProp) {
+      var filterOption = allUser.filter((value) => {
+        return value.nat === selectedOption;
+      });
+    } else if (selectedRadio != "") {
+      var filterOption = userList.filter((value) => {
+        return value.nat === selectedOption;
+      });
+    }
     renderList(filterOption);
   });
 
   // start search function
   $(".searching").on("keyup", function () {
     var value = $(this).val().toLowerCase();
-    if ($('input[type="radio"]').prop("checked")) {
+    if (radioProp) {
       var results = allUser.filter((data) => {
         var title = data.name.title.toLowerCase();
         var first = data.name.first.toLowerCase();
@@ -808,8 +799,8 @@ $(document).ready(function () {
       });
     }
     $("#result").empty();
-    displayRender(results);
-    // renderList(results);
+    state.page = 1;
+    renderList(results);
   });
 
   // view profile
@@ -892,6 +883,5 @@ $(document).ready(function () {
       }
     });
   };
-  displayRender();
-  // renderList();
+  renderList();
 });
