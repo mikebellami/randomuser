@@ -574,7 +574,7 @@ $(document).ready(function () {
   var allUser = [];
   var userList = [];
   var selectedRadio;
-  var radioProp = $('input[type="radio"]').prop("checked");
+  var radioProp;
   // api request
   $.ajax({
     async: false,
@@ -695,6 +695,7 @@ $(document).ready(function () {
   };
 
   const renderList = (data = state.items, start = state.page) => {
+    radioProp = $('input[type="radio"]').prop("checked");
     if (radioProp) {
       state.items = allUser;
     } else if (selectedRadio != "") {
