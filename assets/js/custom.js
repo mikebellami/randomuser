@@ -595,11 +595,10 @@ $(document).ready(function () {
     },
   });
 
-  // render list display
+  // display render
   const displayRender = (data) => {
     // showCountry(s);
     // console.log(showCountry(s));
-
     $.each(data, function (index, person) {
       // combination of all address together
       var strNum = person.location.street.number;
@@ -694,6 +693,7 @@ $(document).ready(function () {
     };
   };
 
+  // render list display
   const renderList = (data = state.items, start = state.page) => {
     radioProp = $('input[type="radio"]').prop("checked");
     if (radioProp) {
@@ -884,5 +884,70 @@ $(document).ready(function () {
       }
     });
   };
+
+  // download to csv
+
+  const getData = (data = state.items) => {
+    const d = data.map((person) => ({
+      Name:
+        person.name.title + " " + person.name.first + " " + person.name.last,
+      Email: person.email,
+      Phone: person.phone,
+      Address:
+        person.location.street.number +
+        " " +
+        person.location.street.name +
+        " " +
+        person.location.city +
+        " " +
+        person.location.state,
+      Gender: person.gender,
+      Nation: person.nat,
+      Image: person.picture.medium,
+    }));
+    const csvData = objectToCSV(d);
+    download(csvData);
+    // console.log(csvData);
+  };
+
+  const objectToCSV = (data) => {
+    var csvRows = [];
+
+    var headers = Object.keys(data[0]);
+    csvRows.push(headers.join(","));
+
+    for (row of data) {
+      var value = headers.map((header) => {
+        var escape = ("" + row[header]).replace(/"/g, '\\"');
+        return `"${escape}"`;
+      });
+      csvRows.push(value.join(","));
+    }
+    return csvRows.join("\n");
+  };
+  // download csv function
+  const download = (data) => {
+    var blob = new Blob([data], { type: "text / csv" });
+    var blobUrl = window.URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.setAttribute("hidden", "");
+    a.setAttribute("href", blobUrl);
+    a.setAttribute(
+      "download",
+      radioProp
+        ? "randomsers.csv"
+        : selectedRadio != ""
+        ? "male-randomusers.csv"
+        : "female-randomusers.csv"
+    );
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+
+  $(".download-btn").on("click", function () {
+    getData();
+  });
+
   renderList();
 });
