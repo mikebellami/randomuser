@@ -570,6 +570,462 @@ $(document).ready(function () {
       },
       nat: "DE",
     },
+    {
+      gender: "female",
+      name: {
+        title: "Mrs",
+        first: "Caitlin",
+        last: "Mcdonalid",
+      },
+      location: {
+        street: {
+          number: 1997,
+          name: "Kingsway",
+        },
+        city: "Salisbury",
+        state: "Gwynedd County",
+        country: "United Kingdom",
+        postcode: "AI81 0YR",
+        coordinates: {
+          latitude: "11.5989",
+          longitude: "170.9209",
+        },
+        timezone: {
+          offset: "+6:00",
+          description: "Almaty, Dhaka, Colombo",
+        },
+      },
+      email: "caitlin.mcdonalid@example.com",
+      login: {
+        uuid: "29ac35b7-56de-4e2e-b382-8bb0d1a61138",
+        username: "blackleopard760",
+        password: "killa",
+        salt: "AZ56j69o",
+        md5: "d585b468438f0db6a90aeccbf58a61c7",
+        sha1: "ba160dac725e8c246c5c6c5527adfb3d6faef639",
+        sha256:
+          "53ec819fc39233aa87568c122f17548adcf3f9b5719acdb5443d0a1dd2b142d9",
+      },
+      dob: {
+        date: "1985-02-12T14:50:21.628Z",
+        age: 36,
+      },
+      registered: {
+        date: "2003-04-11T03:05:51.697Z",
+        age: 18,
+      },
+      phone: "015396 37741",
+      cell: "0713-918-754",
+      id: {
+        name: "NINO",
+        value: "TN 09 93 93 U",
+      },
+      picture: {
+        large: "https://randomuser.me/api/portraits/women/81.jpg",
+        medium: "https://randomuser.me/api/portraits/med/women/81.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/women/81.jpg",
+      },
+      nat: "GB",
+    },
+    {
+      gender: "male",
+      name: {
+        title: "Mr",
+        first: "Sebastian",
+        last: "Watkins",
+      },
+      location: {
+        street: {
+          number: 4211,
+          name: "Dogwood Ave",
+        },
+        city: "Ballarat",
+        state: "Victoria",
+        country: "Australia",
+        postcode: 3667,
+        coordinates: {
+          latitude: "74.4817",
+          longitude: "115.0537",
+        },
+        timezone: {
+          offset: "-4:00",
+          description: "Atlantic Time (Canada), Caracas, La Paz",
+        },
+      },
+      email: "sebastian.watkins@example.com",
+      login: {
+        uuid: "f607d195-5608-48b0-8f8c-2ff9d7959ef9",
+        username: "smalltiger798",
+        password: "kuan",
+        salt: "MeyDzUpS",
+        md5: "f8aaf367d8717636653db5fe122179c2",
+        sha1: "4926d25a6b2c0fa7c2077aa410a858f82d741346",
+        sha256:
+          "a6a58744737facfdc06f71fabf520c76309241e13aa4a0818a66d75ee9c61d28",
+      },
+      dob: {
+        date: "1952-06-10T21:41:43.254Z",
+        age: 69,
+      },
+      registered: {
+        date: "2017-07-25T05:48:39.061Z",
+        age: 4,
+      },
+      phone: "02-5730-8364",
+      cell: "0417-401-290",
+      id: {
+        name: "TFN",
+        value: "215578491",
+      },
+      picture: {
+        large: "https://randomuser.me/api/portraits/men/65.jpg",
+        medium: "https://randomuser.me/api/portraits/med/men/65.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/men/65.jpg",
+      },
+      nat: "AU",
+    },
+    {
+      gender: "female",
+      name: {
+        title: "Mrs",
+        first: "Linnea",
+        last: "Arola",
+      },
+      location: {
+        street: {
+          number: 9581,
+          name: "Siilitie",
+        },
+        city: "Kihniö",
+        state: "Uusimaa",
+        country: "Finland",
+        postcode: 65187,
+        coordinates: {
+          latitude: "-81.1722",
+          longitude: "-178.0246",
+        },
+        timezone: {
+          offset: "-8:00",
+          description: "Pacific Time (US & Canada)",
+        },
+      },
+      email: "linnea.arola@example.com",
+      login: {
+        uuid: "a04af845-7550-4185-8b72-573ea1105509",
+        username: "orangesnake133",
+        password: "dieter",
+        salt: "Hdw66kSi",
+        md5: "acd241dcaa834caede710199c71a6770",
+        sha1: "b27dfff5ee85bd1866072a1dcee8b9cdf913bc76",
+        sha256:
+          "c29518d4c88dbcdc285931b41b4a2136a25ee3aad88fbb077f26bc2d01471112",
+      },
+      dob: {
+        date: "1951-11-01T07:52:02.050Z",
+        age: 70,
+      },
+      registered: {
+        date: "2009-03-22T16:04:17.505Z",
+        age: 12,
+      },
+      phone: "03-386-640",
+      cell: "048-383-37-42",
+      id: {
+        name: "HETU",
+        value: "NaNNA812undefined",
+      },
+      picture: {
+        large: "https://randomuser.me/api/portraits/women/70.jpg",
+        medium: "https://randomuser.me/api/portraits/med/women/70.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/women/70.jpg",
+      },
+      nat: "FI",
+    },
+    {
+      gender: "male",
+      name: {
+        title: "Mr",
+        first: "Phoenix",
+        last: "Williams",
+      },
+      location: {
+        street: {
+          number: 2972,
+          name: "Hereford Street",
+        },
+        city: "Rotorua",
+        state: "Otago",
+        country: "New Zealand",
+        postcode: 40215,
+        coordinates: {
+          latitude: "56.1693",
+          longitude: "-178.8202",
+        },
+        timezone: {
+          offset: "-6:00",
+          description: "Central Time (US & Canada), Mexico City",
+        },
+      },
+      email: "phoenix.williams@example.com",
+      login: {
+        uuid: "3b4f8b9b-5b3b-4d34-bbab-75fa27c5e0c7",
+        username: "whitekoala624",
+        password: "313131",
+        salt: "s1qHzti8",
+        md5: "9bd6088b0c0c5ec8b98f8929cc29e0c5",
+        sha1: "e1ef7d17a7143ad990ca294e6187e98bfd8af2c6",
+        sha256:
+          "76f3c041821f31d89a52de1caf0dfef455b068341161f04eca8cd2e421898a1e",
+      },
+      dob: {
+        date: "1969-05-20T17:38:31.983Z",
+        age: 52,
+      },
+      registered: {
+        date: "2013-02-22T14:49:11.603Z",
+        age: 8,
+      },
+      phone: "(025)-297-1433",
+      cell: "(746)-909-0089",
+      id: {
+        name: "",
+        value: null,
+      },
+      picture: {
+        large: "https://randomuser.me/api/portraits/men/44.jpg",
+        medium: "https://randomuser.me/api/portraits/med/men/44.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/men/44.jpg",
+      },
+      nat: "NZ",
+    },
+    {
+      gender: "male",
+      name: {
+        title: "Mr",
+        first: "Jeff",
+        last: "Montgomery",
+      },
+      location: {
+        street: {
+          number: 2089,
+          name: "Hogan St",
+        },
+        city: "Gresham",
+        state: "Kentucky",
+        country: "United States",
+        postcode: 55318,
+        coordinates: {
+          latitude: "73.8867",
+          longitude: "52.9667",
+        },
+        timezone: {
+          offset: "+6:00",
+          description: "Almaty, Dhaka, Colombo",
+        },
+      },
+      email: "jeff.montgomery@example.com",
+      login: {
+        uuid: "7715e1eb-9717-44f2-a6aa-86b1ddd605e3",
+        username: "greenkoala691",
+        password: "314159",
+        salt: "3v20swFm",
+        md5: "202ffaf7a4bf7cf3b9ac94c405c82b4c",
+        sha1: "ba348ad6bccdf1b1e785ec2084644b6199c69d2c",
+        sha256:
+          "d2bca8e7992ed72b8b4c6d5b61ff2a6fc466b5f10a5dcc3e4cc7df5fc4e8efe2",
+      },
+      dob: {
+        date: "1971-04-28T17:10:00.884Z",
+        age: 50,
+      },
+      registered: {
+        date: "2008-04-25T03:36:54.620Z",
+        age: 13,
+      },
+      phone: "(710)-416-7431",
+      cell: "(073)-290-1689",
+      id: {
+        name: "SSN",
+        value: "489-63-8378",
+      },
+      picture: {
+        large: "https://randomuser.me/api/portraits/men/0.jpg",
+        medium: "https://randomuser.me/api/portraits/med/men/0.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/men/0.jpg",
+      },
+      nat: "US",
+    },
+    {
+      gender: "female",
+      name: {
+        title: "Miss",
+        first: "Luz",
+        last: "Vicente",
+      },
+      location: {
+        street: {
+          number: 9974,
+          name: "Calle de Arganzuela",
+        },
+        city: "Palma de Mallorca",
+        state: "La Rioja",
+        country: "Spain",
+        postcode: 76621,
+        coordinates: {
+          latitude: "-85.3565",
+          longitude: "150.4686",
+        },
+        timezone: {
+          offset: "-5:00",
+          description: "Eastern Time (US & Canada), Bogota, Lima",
+        },
+      },
+      email: "luz.vicente@example.com",
+      login: {
+        uuid: "a0e298b8-2650-4a48-880f-e6f5c00df462",
+        username: "organicfish705",
+        password: "contact",
+        salt: "cVCLXK6Y",
+        md5: "e5e0eae5654108bb691c11ffecad3496",
+        sha1: "f5442025007e04e5d503ec8ef03b3f9594efff5c",
+        sha256:
+          "68f94fca3d5442d5dbf64c831904ba7c40cd609c244f104ab43d2dcb1c122ef7",
+      },
+      dob: {
+        date: "1975-07-21T15:21:12.380Z",
+        age: 46,
+      },
+      registered: {
+        date: "2016-08-13T07:03:30.088Z",
+        age: 5,
+      },
+      phone: "906-933-877",
+      cell: "682-031-698",
+      id: {
+        name: "DNI",
+        value: "17940978-W",
+      },
+      picture: {
+        large: "https://randomuser.me/api/portraits/women/17.jpg",
+        medium: "https://randomuser.me/api/portraits/med/women/17.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/women/17.jpg",
+      },
+      nat: "ES",
+    },
+    {
+      gender: "male",
+      name: {
+        title: "Mr",
+        first: "بنیامین",
+        last: "نجاتی",
+      },
+      location: {
+        street: {
+          number: 7354,
+          name: "30 تیر",
+        },
+        city: "اردبیل",
+        state: "آذربایجان شرقی",
+        country: "Iran",
+        postcode: 65490,
+        coordinates: {
+          latitude: "-71.1330",
+          longitude: "110.7604",
+        },
+        timezone: {
+          offset: "-1:00",
+          description: "Azores, Cape Verde Islands",
+        },
+      },
+      email: "bnymyn.njty@example.com",
+      login: {
+        uuid: "791676b4-b8ce-4c2e-a48b-61d5a63c7023",
+        username: "whiteleopard657",
+        password: "rodney",
+        salt: "KdCOBc9g",
+        md5: "1d34435b32dec3292faea64bf5d1141e",
+        sha1: "40322b1b6250d83bad27e2f5753d51937e873043",
+        sha256:
+          "3dd9a3f12e19062183c3aca9e681039973d6be5438395a489b742ca89005a216",
+      },
+      dob: {
+        date: "1985-05-19T22:31:01.608Z",
+        age: 36,
+      },
+      registered: {
+        date: "2017-04-23T10:43:48.717Z",
+        age: 4,
+      },
+      phone: "023-17107598",
+      cell: "0934-558-1737",
+      id: {
+        name: "",
+        value: null,
+      },
+      picture: {
+        large: "https://randomuser.me/api/portraits/men/20.jpg",
+        medium: "https://randomuser.me/api/portraits/med/men/20.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/men/20.jpg",
+      },
+      nat: "IR",
+    },
+    {
+      gender: "male",
+      name: {
+        title: "Mr",
+        first: "Derek",
+        last: "Ferguson",
+      },
+      location: {
+        street: {
+          number: 3441,
+          name: "Elgin St",
+        },
+        city: "Los Angeles",
+        state: "West Virginia",
+        country: "United States",
+        postcode: 28361,
+        coordinates: {
+          latitude: "85.2241",
+          longitude: "-154.6764",
+        },
+        timezone: {
+          offset: "+7:00",
+          description: "Bangkok, Hanoi, Jakarta",
+        },
+      },
+      email: "derek.ferguson@example.com",
+      login: {
+        uuid: "3188bd7e-157d-4707-afc4-e9805ee2b248",
+        username: "brownrabbit375",
+        password: "truman",
+        salt: "qPUbIJQu",
+        md5: "c53fd523d733712edb44f7e2074d36ff",
+        sha1: "eeed7063a0360bdf5c27092c6644285b0c93d9ae",
+        sha256:
+          "ee167d0445c3a44a90681b498b5bd8b4fbf260ec66d40df4aedf4cf22838a189",
+      },
+      dob: {
+        date: "1968-08-17T14:38:16.762Z",
+        age: 53,
+      },
+      registered: {
+        date: "2013-11-27T01:47:15.001Z",
+        age: 8,
+      },
+      phone: "(009)-855-7235",
+      cell: "(528)-463-4143",
+      id: {
+        name: "SSN",
+        value: "106-12-6588",
+      },
+      picture: {
+        large: "https://randomuser.me/api/portraits/men/59.jpg",
+        medium: "https://randomuser.me/api/portraits/med/men/59.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/men/59.jpg",
+      },
+      nat: "US",
+    },
   ];
   var allUser = [];
   var userList = [];
@@ -582,7 +1038,7 @@ $(document).ready(function () {
     dataType: "json",
     data: {
       seed: "b69bd197bb9abd68",
-      results: 20,
+      results: 30,
     },
     success: (data) => {
       allUser = data.results;
@@ -697,7 +1153,7 @@ $(document).ready(function () {
   const renderList = (data = state.items, start = state.page) => {
     radioProp = $('input[type="radio"]').prop("checked");
     if (radioProp) {
-      state.items = allUser;
+      state.items = User;
     } else if (selectedRadio != "") {
       state.items = userList;
     }
@@ -818,6 +1274,13 @@ $(document).ready(function () {
     $(".details-card").slideDown();
     $(".profile-info").empty();
     $(".searching").attr("disabled", false);
+    $("#current-state").html(
+      radioProp
+        ? "All Users"
+        : selectedRadio === "male"
+        ? "Male Users"
+        : "Female Users"
+    );
   });
 
   const viewProfile = (id) => {
@@ -936,7 +1399,7 @@ $(document).ready(function () {
       "download",
       radioProp
         ? "randomsers.csv"
-        : selectedRadio != ""
+        : selectedRadio === "male"
         ? "male-randomusers.csv"
         : "female-randomusers.csv"
     );
