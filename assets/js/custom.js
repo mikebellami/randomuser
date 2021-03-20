@@ -1031,6 +1031,7 @@ $(document).ready(function () {
   var userList = [];
   var selectedRadio;
   var radioProp;
+  var switchBtn;
 
   // api request
   $.ajax({
@@ -1039,7 +1040,7 @@ $(document).ready(function () {
     dataType: "json",
     data: {
       seed: "b69bd197bb9abd68",
-      results: 20,
+      results: 40,
     },
     success: (data) => {
       allUser = data.results;
@@ -1053,8 +1054,6 @@ $(document).ready(function () {
 
   // display render
   const displayRender = (data) => {
-    // showCountry(s);
-    // console.log(showCountry(s));
     $.each(data, function (index, person) {
       // combination of all address together
       var strNum = person.location.street.number;
@@ -1109,6 +1108,7 @@ $(document).ready(function () {
           </div>
       </div>
       `);
+      showCountry(switchBtn);
     });
   };
 
@@ -1152,6 +1152,7 @@ $(document).ready(function () {
   // render list display
   const renderList = (data = state.items, start = state.page) => {
     radioProp = $('input[type="radio"]').prop("checked");
+
     if (radioProp) {
       state.items = allUser;
     } else if (selectedRadio != "") {
@@ -1159,11 +1160,13 @@ $(document).ready(function () {
     }
     var dataItem = paginator(data, start, state.per_page);
     displayRender(dataItem.items);
-    if (start === total_pages) {
-      $(".pagination-btn-next").attr("disabled", true);
-    } else if (start == 1) {
-      $(".pagination-btn-prev").attr("disabled", true);
-    }
+    // showCountry(s);
+    // console.log(showCountry(s));
+    // if (start === total_pages) {
+    //   $(".pagination-btn-next").attr("disabled", true);
+    // } else if (start == 1) {
+    //   $(".pagination-btn-prev").attr("disabled", true);
+    // }
   };
 
   $(".pagination-btn-prev").on("click", function () {
@@ -1211,9 +1214,9 @@ $(document).ready(function () {
 
   // show country
   $('input[type="checkbox"]').change(() => {
-    s = $("#country").prop("checked");
-    console.log(s);
-    showCountry(s);
+    switchBtn = $("#country").prop("checked");
+    console.log(switchBtn);
+    showCountry(switchBtn);
   });
 
   const showCountry = (state) => {
