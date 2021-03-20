@@ -1159,23 +1159,43 @@ $(document).ready(function () {
       state.items = userList;
     }
     var dataItem = paginator(data, start, state.per_page);
-    displayRender(dataItem.items);
-    // showCountry(s);
-    // console.log(showCountry(s));
-    // if (start === total_pages) {
-    //   $(".pagination-btn-next").attr("disabled", true);
-    // } else if (start == 1) {
-    //   $(".pagination-btn-prev").attr("disabled", true);
-    // }
-  };
 
+    displayRender(dataItem.items);
+
+    console.log(dataItem);
+    start = 1;
+    if (start === total_pages) {
+      $(".pagination-btn-next").attr("disabled", true);
+    } else if (start >= -1) {
+      $(".pagination-btn-prev").attr("disabled", true);
+    }
+  };
+  // const paginateBtn = (data) => {
+  //   $(".pagination-btn-prev").on("click", function () {
+  //     if (state.page - 1) {
+  //       state.page--;
+  //       $(".pagination-btn-next").attr("disabled", false);
+  //     }
+  //     $("#result").empty();
+  //     renderList(data);
+  //   });
+
+  //   $(".pagination-btn-next").on("click", function () {
+  //     if (state.page < total_pages) {
+  //       state.page++;
+  //       $(".pagination-btn-prev").attr("disabled", false);
+  //     }
+  //     $("#result").empty();
+  //     renderList(data);
+  //   });
+  // };
   $(".pagination-btn-prev").on("click", function () {
     if (state.page - 1) {
       state.page--;
       $(".pagination-btn-next").attr("disabled", false);
     }
     $("#result").empty();
-    renderList();
+    renderList(data);
   });
 
   $(".pagination-btn-next").on("click", function () {
@@ -1184,12 +1204,13 @@ $(document).ready(function () {
       $(".pagination-btn-prev").attr("disabled", false);
     }
     $("#result").empty();
-    renderList();
+    renderList(data);
   });
 
   // radio button function
   $('input[type="radio"]').click(() => {
     selectedRadio = $('input[name="gender"]:checked').val();
+    var selectReset = $("#country-select").prop("selectedIndex", 0);
     state.page = 1;
     $("#current-state").html(
       selectedRadio === ""
@@ -1202,20 +1223,21 @@ $(document).ready(function () {
     $("#result").empty();
     $(".searching").val("");
     if (selectedRadio === "") {
+      selectReset;
       renderList(allUser);
     } else {
       filterDisplay = allUser.filter((data) => {
         return data.gender === selectedRadio;
       });
       userList = filterDisplay;
-      renderList(userList);
+      selectReset;
+      renderList(filterDisplay);
     }
   });
 
   // show country
   $('input[type="checkbox"]').change(() => {
     switchBtn = $("#country").prop("checked");
-    console.log(switchBtn);
     showCountry(switchBtn);
   });
 
@@ -1231,7 +1253,8 @@ $(document).ready(function () {
 
   // select country function
   $("#country-select").on("change", () => {
-    var selectedOption = $("#country-select :selected").text();
+    var selectedOption = $("#country-select ").val();
+    state.page = 1;
     $("#result").empty();
     if (radioProp) {
       var filterOption = allUser.filter((value) => {
@@ -1242,7 +1265,14 @@ $(document).ready(function () {
         return value.nat === selectedOption;
       });
     }
-    renderList(filterOption);
+
+    if (selectedOption == "country") {
+      renderList();
+    } else {
+      // paginateBtn(filterOption);
+      renderList(filterOption);
+      console.log(filterOption);
+    }
   });
 
   // start search function
@@ -1427,6 +1457,5 @@ $(document).ready(function () {
   $(".download-btn").on("click", function () {
     getData();
   });
-
   renderList();
 });
