@@ -1031,6 +1031,7 @@ $(document).ready(function () {
   var userList = [];
   var selectedRadio;
   var radioProp;
+
   // api request
   $.ajax({
     async: false,
@@ -1038,11 +1039,10 @@ $(document).ready(function () {
     dataType: "json",
     data: {
       seed: "b69bd197bb9abd68",
-      results: 30,
+      results: 20,
     },
     success: (data) => {
       allUser = data.results;
-      // console.log(allUser);
     },
     err: (jqXHR, textStatus, e) => {
       console.log(jqXHR);
@@ -1153,17 +1153,23 @@ $(document).ready(function () {
   const renderList = (data = state.items, start = state.page) => {
     radioProp = $('input[type="radio"]').prop("checked");
     if (radioProp) {
-      state.items = User;
+      state.items = allUser;
     } else if (selectedRadio != "") {
       state.items = userList;
     }
     var dataItem = paginator(data, start, state.per_page);
     displayRender(dataItem.items);
+    if (start === total_pages) {
+      $(".pagination-btn-next").attr("disabled", true);
+    } else if (start == 1) {
+      $(".pagination-btn-prev").attr("disabled", true);
+    }
   };
 
   $(".pagination-btn-prev").on("click", function () {
-    if (state.page > 1) {
+    if (state.page - 1) {
       state.page--;
+      $(".pagination-btn-next").attr("disabled", false);
     }
     $("#result").empty();
     renderList();
@@ -1172,6 +1178,7 @@ $(document).ready(function () {
   $(".pagination-btn-next").on("click", function () {
     if (state.page < total_pages) {
       state.page++;
+      $(".pagination-btn-prev").attr("disabled", false);
     }
     $("#result").empty();
     renderList();
@@ -1263,17 +1270,23 @@ $(document).ready(function () {
   // view profile
   $(document).on("click", ".profile-btn", function () {
     $(".profile-info").empty();
-    var id = $(this).attr("id");
     $(".details-card").slideUp();
-    $(".searching").attr("disabled", true);
+    $(".download-btn, .pagination-btn-prev, .pagination-btn-next").attr(
+      "disabled",
+      true
+    );
     $("#current-state").html("User List");
+    var id = $(this).attr("id");
     viewProfile(id);
   });
   // back button
   $(document).on("click", ".back-btn", function () {
     $(".details-card").slideDown();
     $(".profile-info").empty();
-    $(".searching").attr("disabled", false);
+    $(".download-btn, .pagination-btn-prev, .pagination-btn-next").attr(
+      "disabled",
+      false
+    );
     $("#current-state").html(
       radioProp
         ? "All Users"
