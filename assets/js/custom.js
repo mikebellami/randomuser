@@ -1163,10 +1163,10 @@ $(document).ready(function () {
     displayRender(dataItem.items);
 
     console.log(dataItem);
-    start = 1;
+
     if (start === total_pages) {
       $(".pagination-btn-next").attr("disabled", true);
-    } else if (start >= -1) {
+    } else if (start == 1) {
       $(".pagination-btn-prev").attr("disabled", true);
     }
   };
@@ -1189,13 +1189,14 @@ $(document).ready(function () {
   //     renderList(data);
   //   });
   // };
+
   $(".pagination-btn-prev").on("click", function () {
     if (state.page - 1) {
       state.page--;
       $(".pagination-btn-next").attr("disabled", false);
     }
     $("#result").empty();
-    renderList(data);
+    renderList();
   });
 
   $(".pagination-btn-next").on("click", function () {
@@ -1204,7 +1205,7 @@ $(document).ready(function () {
       $(".pagination-btn-prev").attr("disabled", false);
     }
     $("#result").empty();
-    renderList(data);
+    renderList();
   });
 
   // radio button function
@@ -1254,7 +1255,7 @@ $(document).ready(function () {
   // select country function
   $("#country-select").on("change", () => {
     var selectedOption = $("#country-select ").val();
-    state.page = 1;
+
     $("#result").empty();
     if (radioProp) {
       var filterOption = allUser.filter((value) => {
@@ -1269,7 +1270,7 @@ $(document).ready(function () {
     if (selectedOption == "country") {
       renderList();
     } else {
-      // paginateBtn(filterOption);
+      state.page = 1;
       renderList(filterOption);
       console.log(filterOption);
     }
@@ -1457,5 +1458,6 @@ $(document).ready(function () {
   $(".download-btn").on("click", function () {
     getData();
   });
+  // paginateBtn();
   renderList();
 });
